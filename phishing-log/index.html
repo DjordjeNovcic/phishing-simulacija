@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logging...</title>
+  <script>
+    // Učitaj parametre iz URL-a
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email") || "unknown";
+    const ua = navigator.userAgent;
+
+    // Google Script Web App URL
+    const log_url = "https://script.google.com/macros/s/AKfycbw-aWPWCe0iWhUzNeLIwiHudmggh6svxUGSEcV4zHOVCZZ5xUSwrTpcOQYMBFUf0phy/exec"
+                  + "?email=" + encodeURIComponent(email)
+                  + "&ua=" + encodeURIComponent(ua);
+
+    // Redirektuj korisnika ka log URL-u (koji i zapisuje i prosleđuje dalje)
+    window.location.href = log_url;
+  </script>
+</head>
+<body>
+  <p>Učitavanje...</p>
+</body>
+</html>
